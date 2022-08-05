@@ -22,7 +22,7 @@ const Form = ({ legend }) => {
         setResult({
             amount,
             finalResult: (+amount / rate).toFixed(2),
-            currency,
+            currency: currencies.find(({ name }) => name === currency).code,
         });
     };
 
@@ -55,7 +55,9 @@ const Form = ({ legend }) => {
                 <Paragraph
                     label="WYNIK : "
                 >
-                    <strong></strong>
+                    <strong>
+                        {result && `${result.amount} PLN = ${result.finalResult} ${result.currency}`}
+                    </strong>
                 </Paragraph>
 
                 <Paragraph>
