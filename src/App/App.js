@@ -1,7 +1,6 @@
 import "./style.css";
 import Header from "./Header";
 import Form from "./Form";
-import { currencies } from "./currencies";
 
 function App() {
   return (
@@ -11,10 +10,7 @@ function App() {
 
       <main>
 
-        <Form
-          legend="WYMIANA WALUT"
-          currencies={currencies}
-        />
+        <Form legend="WYMIANA WALUT" />
 
       </main>
     </div>

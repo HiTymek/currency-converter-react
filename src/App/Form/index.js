@@ -3,8 +3,13 @@ import Paragraph from "./Paragraph";
 import CurrencySelect from "./CurrencySelect";
 import AmountInput from "./AmountInput";
 import CountButton from "./CountButton";
+import { currencies } from "../currencies";
+import { useState } from "react";
+
 
 const Form = ({ legend }) => {
+    const [currency, setCurrency] = useState("");
+
     return (
         <form className="form">
 
@@ -15,7 +20,11 @@ const Form = ({ legend }) => {
                 <Paragraph
                     label="WYBIERZ WALUTE"
                 >
-                    <CurrencySelect />
+                    <CurrencySelect
+                        currencies={currencies}
+                        currency={currency}
+                        setCurrency={setCurrency}
+                    />
                 </Paragraph>
 
                 <Paragraph
