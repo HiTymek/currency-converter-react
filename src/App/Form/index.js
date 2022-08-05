@@ -8,11 +8,22 @@ import { useState } from "react";
 
 
 const Form = ({ legend }) => {
-    const [currency, setCurrency] = useState("");
+    const [currency, setCurrency] = useState(currencies[0].name);
     const [amount, setAmount] = useState("");
+    const [result, setResult] = useState(null);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        calculateResult();
+    };
+
+    const calculateResult = () => {
+        const rate = currencies.find(({ name }) => name === currency).exchangeRate;
+        setResult({
+            amount,
+            finalResult: (+amount / rate).toFixed(2),
+            currency,
+        });
     };
 
     return (
