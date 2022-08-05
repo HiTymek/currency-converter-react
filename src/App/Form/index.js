@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const Form = ({ legend }) => {
     const [currency, setCurrency] = useState("");
+    const [amount, setAmount] = useState("");
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -37,7 +38,7 @@ const Form = ({ legend }) => {
                 <Paragraph
                     label="WPISZ KWOTĘ W PLN"
                 >
-                    <AmountInput />
+                    <AmountInput amount={amount} setAmount={setAmount} />
                 </Paragraph>
 
                 <Paragraph
