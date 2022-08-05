@@ -1,5 +1,6 @@
 import "./style.css";
 import Paragraph from "./Paragraph";
+import CurrencySelect from "./CurrencySelect";
 
 const Form = ({ legend }) => {
     return (
@@ -8,16 +9,11 @@ const Form = ({ legend }) => {
             <fieldset className="form__fieldset">
 
                 <legend className="form__legend">{legend}</legend>
+
                 <Paragraph
                     label="WYBIERZ WALUTE"
                 >
-                    <select className="form__field">
-                        <option>EUR</option>
-                        <option>USD</option>
-                        <option>GBP</option>
-                        <option>CHF</option>
-                        <option>UAH</option>
-                    </select>
+                    <CurrencySelect />
                 </Paragraph>
 
                 <Paragraph
