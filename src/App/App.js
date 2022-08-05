@@ -1,6 +1,7 @@
 import "./style.css";
 import Header from "./Header";
 import Form from "./Form";
+import { currencies } from "./currencies";
 
 function App() {
   return (
@@ -8,9 +9,12 @@ function App() {
 
       <Header title="WIRTUALNY KANTOR CENTUŚ 😎" />
 
-      <main className="main">
+      <main>
 
-        <Form legend="WYMIANA WALUT" />
+        <Form
+          legend="WYMIANA WALUT"
+          currencies={currencies}
+        />
 
       </main>
     </div>
