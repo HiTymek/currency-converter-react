@@ -10,8 +10,15 @@ import { useState } from "react";
 const Form = ({ legend }) => {
     const [currency, setCurrency] = useState("");
 
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+    };
+
     return (
-        <form className="form">
+        <form
+            className="form"
+            onSubmit={onFormSubmit}
+        >
 
             <fieldset className="form__fieldset">
 
