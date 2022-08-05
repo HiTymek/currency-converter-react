@@ -2,6 +2,7 @@ import "./style.css";
 import Paragraph from "./Paragraph";
 import CurrencySelect from "./CurrencySelect";
 import AmountInput from "./AmountInput";
+import CountButton from "./CountButton";
 
 const Form = ({ legend }) => {
     return (
@@ -30,7 +31,7 @@ const Form = ({ legend }) => {
                 </Paragraph>
 
                 <Paragraph>
-                    <button className="form__button">PRZELICZ</button>
+                    <CountButton />
                 </Paragraph>
 
             </fieldset>
