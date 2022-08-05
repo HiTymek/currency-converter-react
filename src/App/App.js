@@ -1,11 +1,11 @@
 import "./style.css";
+import Header from "./Header";
 
 function App() {
   return (
     <div className="container">
-      <header>
-        <h1 className="header">WIRTUALNY KANTOR CENTUŚ 😎</h1>
-      </header>
+
+      <Header title="WIRTUALNY KANTOR CENTUŚ 😎" />
 
       <main className="main">
 
