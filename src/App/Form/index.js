@@ -60,9 +60,11 @@ const Form = ({ legend }) => {
                     </strong>
                 </Paragraph>
 
-                <Paragraph>
+                <p
+                    className="form__paragraph form__paragraph--centred"
+                >
                     <CountButton />
-                </Paragraph>
+                </p>
 
             </fieldset>
 
