@@ -1,3 +1,5 @@
 .container {
     font-family: "Montserrat", sans-serif;
+    background-image: url("/src/landscape.jpg");
+    height: 100vh;
 }
