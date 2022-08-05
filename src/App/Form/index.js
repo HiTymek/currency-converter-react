@@ -1,6 +1,7 @@
 import "./style.css";
 import Paragraph from "./Paragraph";
 import CurrencySelect from "./CurrencySelect";
+import AmountInput from "./AmountInput";
 
 const Form = ({ legend }) => {
     return (
@@ -19,8 +20,7 @@ const Form = ({ legend }) => {
                 <Paragraph
                     label="WPISZ KWOTĘ W PLN"
                 >
-                    <input className="form__field" type="number" id="amount" min="1" step="0.1"
-                        placeholder="Kwotę podaj w PLN" />
+                    <AmountInput />
                 </Paragraph>
 
                 <Paragraph
