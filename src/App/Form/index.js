@@ -1,4 +1,5 @@
 import "./style.css";
+import Paragraph from "./Paragraph";
 
 const Form = ({ legend }) => {
     return (
@@ -7,9 +8,9 @@ const Form = ({ legend }) => {
             <fieldset className="form__fieldset">
 
                 <legend className="form__legend">{legend}</legend>
-
-                <p className="form__paragraph">
-                    <label className="form__label">WYBIERZ WALUTE</label>
+                <Paragraph
+                    label="WYBIERZ WALUTE"
+                >
                     <select className="form__field">
                         <option>EUR</option>
                         <option>USD</option>
@@ -17,19 +18,24 @@ const Form = ({ legend }) => {
                         <option>CHF</option>
                         <option>UAH</option>
                     </select>
-                </p>
+                </Paragraph>
 
-                <p className="form__paragraph">
-                    <label className="form__label">WPISZ KWOTĘ W PLN</label>
+                <Paragraph
+                    label="WPISZ KWOTĘ W PLN"
+                >
                     <input className="form__field" type="number" id="amount" min="1" step="0.1"
                         placeholder="Kwotę podaj w PLN" />
-                </p>
+                </Paragraph>
 
-                <p className="form__paragraph">WYNIK : <strong></strong></p>
+                <Paragraph
+                    label="WYNIK : "
+                >
+                    <strong></strong>
+                </Paragraph>
 
-                <p className="form__paragraph">
+                <Paragraph>
                     <button className="form__button">PRZELICZ</button>
-                </p>
+                </Paragraph>
 
             </fieldset>
 
