@@ -1,15 +1,15 @@
-# Currency Converter in React.js
-## Description
+# Currency Converter in React.js 💰
+## Description 📑
 
 This is a simple currency converter. Created with react technology. In this app you can choose one currency from sevral and add the amount you want convert from PLN to the selected currency.
 
-## Preview
+## Preview 👓
 
-![GIF how to use this app]("/src/currencyconverterhowtouse.gif")
+![GIF how to use this app](/src/currencyconverterhowtouse.gif)
 
-## Demo
+## Demo 🔨
 
-https://hitymek.github.io/currency-converter-react/
+Demo you can see [Here!](https://hitymek.github.io/currency-converter-react/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
