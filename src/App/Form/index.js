@@ -1,8 +1,6 @@
 import "./style.css";
-import Paragraph from "./Paragraph";
+import InputContainer from "./InputContainer";
 import CurrencySelect from "./CurrencySelect";
-import AmountInput from "./AmountInput";
-import CountButton from "./CountButton";
 import { currencies } from "../currencies";
 import { useState } from "react";
 
@@ -33,37 +31,36 @@ const Form = ({ legend }) => {
         >
 
             <fieldset className="form__fieldset">
-
                 <legend className="form__legend">{legend}</legend>
 
-                <Paragraph
-                    label="WYBIERZ WALUTE"
-                >
+                <InputContainer label="WYBIERZ WALUTE">
                     <CurrencySelect
                         currencies={currencies}
                         currency={currency}
                         setCurrency={setCurrency}
                     />
-                </Paragraph>
+                </InputContainer>
 
-                <Paragraph
-                    label="WPISZ KWOTĘ W PLN"
-                >
-                    <AmountInput amount={amount} setAmount={setAmount} />
-                </Paragraph>
+                <InputContainer label="WPISZ KWOTĘ W PLN">
+                    <input
+                        className="form__field"
+                        type="number"
+                        min="1"
+                        step="0.1"
+                        placeholder="Kwotę podaj w PLN"
+                        value={amount}
+                        onChange={({ target }) => setAmount(target.value)}
+                    />
+                </InputContainer>
 
-                <Paragraph
-                    label="WYNIK : "
-                >
+                <InputContainer label="WYNIK : ">
                     <strong>
                         {result && `${result.amount} PLN = ${result.finalResult} ${result.currency}`}
                     </strong>
-                </Paragraph>
+                </InputContainer>
 
-                <p
-                    className="form__paragraph form__paragraph--centred"
-                >
-                    <CountButton />
+                <p className="form__paragraph form__paragraph--centred">
+                    <button className="form__button">PRZELICZ</button>
                 </p>
 
             </fieldset>

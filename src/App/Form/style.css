@@ -18,3 +18,24 @@
     margin: 0 auto;
     font-size: 18px;
 }
+
+.form__field {
+    border: 1px solid teal;
+    width: 230px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.form__button {
+    width: 180px;
+    background-color: teal;
+    color: #eee;
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+}
+
+.form__button:hover {
+    background-color: hsl(180, 100%, 20%);
+    cursor: pointer;
+}
