@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./style.css";
 
 const Clock = () => {
 
@@ -29,7 +30,9 @@ const Clock = () => {
     }, [clock]);
 
     return (
-        <div className="form__clock">Dzisiaj jest {currentTimeString}</div>
+        <div className="form__clock">
+            Dzisiaj jest {currentTimeString}
+        </div>
     );
 };
 
