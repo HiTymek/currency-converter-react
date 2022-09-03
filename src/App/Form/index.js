@@ -1,6 +1,7 @@
 import "./style.css";
 import InputContainer from "./InputContainer";
 import CurrencySelect from "./CurrencySelect";
+import Clock from "./Clock";
 import { currencies } from "../currencies";
 import { useState } from "react";
 
@@ -32,6 +33,8 @@ const Form = ({ legend }) => {
 
             <fieldset className="form__fieldset">
                 <legend className="form__legend">{legend}</legend>
+
+                <Clock />
 
                 <InputContainer label="WYBIERZ WALUTE">
                     <CurrencySelect
