@@ -3,35 +3,32 @@ import "./style.css";
 
 const Clock = () => {
 
-    const currentTime = new Date();
-    const currentTimeString = currentTime.toLocaleDateString("pl",
-        {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric",
-        }
-    );
+    const formatDate = (clock) => clock.toLocaleDateString(undefined, {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+    });
 
-    const [clock, setClock] = useState(currentTimeString);
+    const [clock, setClock] = useState(new Date());
 
     useEffect(() => {
 
         const intervalId = setInterval(() => {
-            setClock(clock => clock + 1);
+            setClock(new Date());
         }, 1000);
 
         return () => {
             clearInterval(intervalId);
         };
 
-    }, [clock]);
+    }, []);
 
     return (
         <div className="form__clock">
-            Dzisiaj jest {currentTimeString}
+            Dzisiaj jest {formatDate(clock)}
         </div>
     );
 };
