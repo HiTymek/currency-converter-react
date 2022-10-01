@@ -6,14 +6,14 @@ export const StyledForm = styled.form`
 `;
 
 export const Fieldset = styled.fieldset`
-    border: 3px solid teal;
+    border: 3px solid ${({ theme }) => theme.primaryColor};
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0px 0px 10px 1px hsl(180, 100%, 30%);
 `;
 
 export const Legend = styled.legend`
-    background-color: teal;
+    background-color: ${({ theme }) => theme.primaryColor};
     color: #eee;
     border-radius: 5px;
     padding: 15px;
@@ -22,7 +22,7 @@ export const Legend = styled.legend`
 `;
 
 export const Input = styled.input`
-    border: 1px solid teal;
+    border: 1px solid ${({ theme }) => theme.primaryColor};
     width: 230px;
     border-radius: 5px;
     padding: 3px;
@@ -30,7 +30,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     width: 180px;
-    background-color: teal;
+    background-color: ${({ theme }) => theme.primaryColor};
     color: #eee;
     border-radius: 5px;
     padding: 15px;
