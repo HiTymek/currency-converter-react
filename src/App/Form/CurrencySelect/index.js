@@ -1,8 +1,7 @@
-import "./style.css";
+import { StyledCurrencySelect } from "./styled";
 
 const CurrencySelect = ({ currencies, currency, setCurrency }) => (
-    <select
-        className="form__field"
+    <StyledCurrencySelect
         value={currency}
         onChange={({ target }) => setCurrency(target.value)}
     >
@@ -14,7 +13,7 @@ const CurrencySelect = ({ currencies, currency, setCurrency }) => (
                 {currency.name}
             </option>
         ))}
-    </select>
+    </StyledCurrencySelect>
 );
 
 export default CurrencySelect;
