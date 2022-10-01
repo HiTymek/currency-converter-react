@@ -1,10 +1,10 @@
-import "./style.css";
+import { StyledInputContainer, Label } from "./styled";
 
 const InputContainer = ({ label, children }) => (
-    <p className="form__paragraph">
-        <label className="form__label">{label}</label>
+    <StyledInputContainer>
+        <Label>{label}</Label>
         {children}
-    </p>
+    </StyledInputContainer>
 );
 
 export default InputContainer;

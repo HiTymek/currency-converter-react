@@ -54,15 +54,15 @@ const Form = ({ legend }) => {
                     />
                 </InputContainer>
 
-                <InputContainer label="WYNIK : ">
+                <InputContainer label="WYNIK">
                     <strong>
                         {result && `${result.amount} PLN = ${result.finalResult} ${result.currency}`}
                     </strong>
                 </InputContainer>
 
-                <p className="form__paragraph form__paragraph--centred">
+                <InputContainer label="PRZELICZ ILE DOSTANIESZ">
                     <Button>PRZELICZ</Button>
-                </p>
+                </InputContainer>
 
             </Fieldset>
 
