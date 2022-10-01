@@ -1,9 +1,9 @@
-import "./style.css";
 import InputContainer from "./InputContainer";
 import CurrencySelect from "./CurrencySelect";
 import Clock from "./Clock";
 import { currencies } from "../currencies";
 import { useState } from "react";
+import { StyledForm, Fieldset, Legend, Input, Button } from "./styled";
 
 
 const Form = ({ legend }) => {
@@ -26,13 +26,12 @@ const Form = ({ legend }) => {
     };
 
     return (
-        <form
-            className="form"
+        <StyledForm
             onSubmit={onFormSubmit}
         >
 
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">{legend}</legend>
+            <Fieldset>
+                <Legend>{legend}</Legend>
 
                 <Clock />
 
@@ -45,11 +44,10 @@ const Form = ({ legend }) => {
                 </InputContainer>
 
                 <InputContainer label="WPISZ KWOTĘ W PLN">
-                    <input
-                        className="form__field"
+                    <Input
                         type="number"
                         min="1"
-                        step="0.1"
+                        step="0.01"
                         placeholder="Kwotę podaj w PLN"
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
@@ -63,12 +61,12 @@ const Form = ({ legend }) => {
                 </InputContainer>
 
                 <p className="form__paragraph form__paragraph--centred">
-                    <button className="form__button">PRZELICZ</button>
+                    <Button>PRZELICZ</Button>
                 </p>
 
-            </fieldset>
+            </Fieldset>
 
-        </form>
+        </StyledForm>
     );
 };
 

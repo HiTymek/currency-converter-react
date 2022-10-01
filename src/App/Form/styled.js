@@ -1,41 +1,44 @@
-.form {
+import styled from "styled-components";
+
+export const StyledForm = styled.form`
     max-width: 700px;
     margin: 0 auto;
-}
+`;
 
-.form__fieldset {
+export const Fieldset = styled.fieldset`
     border: 3px solid teal;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0px 0px 10px 1px hsl(180, 100%, 30%);
-}
+`;
 
-.form__legend {
+export const Legend = styled.legend`
     background-color: teal;
     color: #eee;
     border-radius: 5px;
     padding: 15px;
     margin: 0 auto;
     font-size: 18px;
-}
+`;
 
-.form__field {
+export const Input = styled.input`
     border: 1px solid teal;
     width: 230px;
     border-radius: 5px;
     padding: 3px;
-}
+`;
 
-.form__button {
+export const Button = styled.button`
     width: 180px;
     background-color: teal;
     color: #eee;
     border-radius: 5px;
     padding: 15px;
     border: none;
-}
 
-.form__button:hover {
-    background-color: hsl(180, 100%, 20%);
-    cursor: pointer;
-}
+    &:hover{
+        background-color: hsl(180, 100%, 20%);
+        cursor: pointer;
+    }
+`;
+
