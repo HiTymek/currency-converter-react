@@ -13,6 +13,6 @@ export const Label = styled.label`
     align-self: center;
     justify-self: left;
     text-align: left;
-    color: #333;
+    color:${({ theme }) => theme.colors.mineShaft};
     font-weight: 700;
 `;

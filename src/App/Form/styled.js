@@ -6,15 +6,15 @@ export const StyledForm = styled.form`
 `;
 
 export const Fieldset = styled.fieldset`
-    border: 3px solid ${({ theme }) => theme.primaryColor};
+    border: 3px solid ${({ theme }) => theme.colors.teal};
     border-radius: 5px;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 0px 10px 1px hsl(180, 100%, 30%);
 `;
 
 export const Legend = styled.legend`
-    background-color: ${({ theme }) => theme.primaryColor};
-    color: #eee;
+    background-color: ${({ theme }) => theme.colors.teal};
+    color: ${({ theme }) => theme.colors.gallery};
     border-radius: 5px;
     padding: 15px;
     margin: 0 auto;
@@ -22,7 +22,7 @@ export const Legend = styled.legend`
 `;
 
 export const Input = styled.input`
-    border: 1px solid ${({ theme }) => theme.primaryColor};
+    border: 1px solid ${({ theme }) => theme.colors.teal};
     width: 230px;
     border-radius: 5px;
     padding: 3px;
@@ -30,14 +30,14 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     width: 180px;
-    background-color: ${({ theme }) => theme.primaryColor};
-    color: #eee;
+    background-color: ${({ theme }) => theme.colors.teal};
+    color: ${({ theme }) => theme.colors.gallery};
     border-radius: 5px;
     padding: 15px;
     border: none;
 
     &:hover{
-        background-color: hsl(180, 100%, 20%);
+        background-color: ${({ theme }) => theme.colors.blueStone};
         cursor: pointer;
     }
 `;
