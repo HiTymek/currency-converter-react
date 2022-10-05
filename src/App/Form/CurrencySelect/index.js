@@ -1,19 +1,23 @@
 import { StyledCurrencySelect } from "./styled";
 
-const CurrencySelect = ({ currencies, currency, setCurrency }) => (
-    <StyledCurrencySelect
-        value={currency}
-        onChange={({ target }) => setCurrency(target.value)}
-    >
-        {currencies.map(currency => (
-            <option
-                key={currency.code}
-                value={currency.name}
-            >
-                {currency.name}
-            </option>
-        ))}
-    </StyledCurrencySelect>
-);
+const CurrencySelect = ({ ratesData, currency, setCurrency }) => {
+
+    return (
+        <StyledCurrencySelect
+            value={currency}
+            onChange={({ target }) => setCurrency(target.value)}
+        >
+            {
+                Object.keys(ratesData.rates).map(currency => (
+                    <option key={currency} value={currency}>
+                        {currency}
+                    </option>
+                ))
+            }
+        </StyledCurrencySelect>
+    );
+};
+
+
 
 export default CurrencySelect;
