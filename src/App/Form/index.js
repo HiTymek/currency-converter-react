@@ -2,11 +2,46 @@ import InputContainer from "./InputContainer";
 import CurrencySelect from "./CurrencySelect";
 import Clock from "./Clock";
 import { currencies } from "../currencies";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyledForm, Fieldset, Legend, Input, Button } from "./styled";
+import axios from "axios";
+
+const useRatesData = () => {
+    const [ratesData, setRatesData] = useState({
+        state: "pending",
+    });
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await axios.get("https://api.exchangerate.host/latest");
+                const date = response.data.date;
+                const rates = response.data.rates;
+                setRatesData({
+                    state: "succes",
+                    date,
+                    rates,
+                });
+            } catch (error) {
+                setRatesData({
+                    state: "error",
+                });
+                console.log("Something went wrong", error);
+            }
+        };
+
+        setTimeout(getData, 1000);
+
+    }, []);
+
+    return ratesData;
+};
 
 
 const Form = ({ legend }) => {
+
+    const ratesData = useRatesData();
+
     const [currency, setCurrency] = useState(currencies[0].name);
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState(null);
