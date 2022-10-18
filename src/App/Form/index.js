@@ -2,6 +2,7 @@ import InputContainer from "./InputContainer";
 import CurrencySelect from "./CurrencySelect";
 import Clock from "./Clock";
 import Info from "./Info";
+import InformationWindow from "./InformationWindow";
 import { useState } from "react";
 import { StyledForm, Fieldset, Legend, Input, Button } from "./styled";
 import { useRatesData } from "./useRatesData";
@@ -30,7 +31,16 @@ const Form = ({ legend }) => {
 
     return (
         <>
-            {ratesData.state === "pending" ? <div></div>
+            {ratesData.state === "pending" ?
+                <StyledForm>
+                    <Fieldset>
+                        <Clock />
+                        <InformationWindow
+                            header={"Przelicznik Walut"}
+                            content={"Sekundka... Właśnie przebiega pobieranie aktualnych kursów walut z Europejskiego Banku Centralnego 🔨"}
+                        />
+                    </Fieldset>
+                </StyledForm>
                 :
                 ratesData.state === "succes" ?
                     <StyledForm
