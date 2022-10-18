@@ -6,5 +6,6 @@ export const theme = {
         blueStone: "#006666",
         mineShaft: "#333333",
         doveGray: "#666666",
+        crimson: "#DC143C",
     },
 };
