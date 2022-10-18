@@ -7,4 +7,5 @@ export const StyledInformationWindowHeader = styled.h2`
 
 export const StyledInformationWindowContent = styled.p`
     margin: 20px;
+    text-align: center;
 `;

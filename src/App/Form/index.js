@@ -85,12 +85,17 @@ const Form = ({ legend }) => {
                         </Fieldset>
 
                     </StyledForm>
-                    : <div></div>
-
+                    :
+                    <StyledForm error>
+                        <Fieldset>
+                            <Clock />
+                            <InformationWindow
+                                header={"Przelicznik Walut"}
+                                content={"Coś poszło nie tak 🙁. Sprawdź swoje połączenie z internetem. Jeśli nie pomogło, wygląda na to, ze to nasza wina. Prosimy spróbuj poźniej 😃."}
+                            />
+                        </Fieldset>
+                    </StyledForm>
             }
-
-
-
         </>
     );
 };

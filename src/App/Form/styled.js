@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
     max-width: 700px;
     margin: 0 auto;
+
+    ${({ error }) => error && css`
+        color:${({ theme }) => theme.colors.crimson};
+    `}
 `;
 
 export const Fieldset = styled.fieldset`
