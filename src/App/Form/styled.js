@@ -2,10 +2,10 @@ import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
     max-width: 700px;
-    margin: 0 auto;
+    margin: 10px auto;
 
     ${({ error }) => error && css`
-        color:${({ theme }) => theme.colors.crimson};
+        color: ${({ theme }) => theme.colors.crimson};
     `}
 `;
 
