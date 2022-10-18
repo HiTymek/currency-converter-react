@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useState, useEffect } from 'react';
+import axios from "axios";
 
 export const useRatesData = () => {
 
@@ -11,12 +11,12 @@ export const useRatesData = () => {
         const getData = async () => {
             try {
                 const response = await axios.get("https://api.exchangerate.host/latest?base=PLN");
-                const rates = response.data.rates;
                 const date = response.data.date;
+                const rates = response.data.rates;
                 setRatesData({
                     state: "succes",
-                    rates,
                     date,
+                    rates,
                 });
             } catch (error) {
                 setRatesData({
