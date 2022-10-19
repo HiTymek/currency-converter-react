@@ -11,7 +11,7 @@ const Form = ({ legend }) => {
 
     const ratesData = useRatesData();
 
-    const [currency, setCurrency] = useState("");
+    const [currency, setCurrency] = useState("USD");
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState(null);
 
