@@ -27,6 +27,10 @@ export const Legend = styled.legend`
     padding: 15px;
     margin: 0 auto;
     font-size: 18px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+      font-size: 15px;  
+    };
 `;
 
 export const Input = styled.input`
