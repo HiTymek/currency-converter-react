@@ -24,7 +24,7 @@ const Form = ({ legend }) => {
         const rate = ratesData.rates[currency];
         setResult({
             amount,
-            finalResult: (+amount / rate).toFixed(2),
+            finalResult: (+amount * rate).toFixed(2),
             currency: currency,
         });
     };
@@ -72,7 +72,7 @@ const Form = ({ legend }) => {
 
                             <InputContainer label="WYNIK">
                                 <strong>
-                                    {result && `${result.amount} ${result.currency} = ${result.finalResult} PLN`}
+                                    {result && `${result.amount} PLN = ${result.finalResult} ${result.currency}`}
                                 </strong>
                             </InputContainer>
 
