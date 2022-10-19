@@ -8,4 +8,7 @@ export const theme = {
         doveGray: "#666666",
         crimson: "#DC143C",
     },
+    breakpoint: {
+        mobileMax: 767,
+    },
 };

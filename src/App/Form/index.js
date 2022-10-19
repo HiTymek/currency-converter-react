@@ -59,7 +59,7 @@ const Form = ({ legend }) => {
                                 />
                             </InputContainer>
 
-                            <InputContainer label="WPISZ KWOTĘ W PLN">
+                            <InputContainer label="KWOTA W PLN">
                                 <Input
                                     type="number"
                                     min="1"

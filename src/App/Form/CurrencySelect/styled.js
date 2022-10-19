@@ -5,4 +5,9 @@ export const StyledCurrencySelect = styled.select`
     width: 230px;
     border-radius: 5px;
     padding: 3px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+      padding: 1px;
+      width: 200px;
+    };
 `;

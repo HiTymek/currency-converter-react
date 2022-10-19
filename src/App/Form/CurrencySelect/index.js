@@ -18,6 +18,4 @@ const CurrencySelect = ({ ratesData, currency, setCurrency }) => {
     );
 };
 
-
-
 export default CurrencySelect;

@@ -6,4 +6,8 @@ export const StyledInfoContainer = styled.div`
 
 export const StyledInfo = styled.p`
     color: ${({ theme }) => theme.colors.mineShaft};
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+      font-size: 12px;  
+    };
 `;

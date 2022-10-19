@@ -7,4 +7,8 @@ export const StyledClock = styled.div`
     text-align: center;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+      font-size: 12px;
+    };
 `;

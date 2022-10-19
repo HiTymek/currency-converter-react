@@ -14,6 +14,10 @@ export const Fieldset = styled.fieldset`
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 0px 10px 1px hsl(180, 100%, 30%);
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+        margin: 0 7px;
+    }
 `;
 
 export const Legend = styled.legend`
@@ -30,6 +34,11 @@ export const Input = styled.input`
     width: 230px;
     border-radius: 5px;
     padding: 3px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+        padding: 1px;
+        width: 200px;
+    };
 `;
 
 export const Button = styled.button`
@@ -44,5 +53,10 @@ export const Button = styled.button`
         background-color: ${({ theme }) => theme.colors.blueStone};
         cursor: pointer;
     }
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+      padding: 10px;  
+      font-size: 14px;
+    };
 `;
 
