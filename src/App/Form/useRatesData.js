@@ -11,8 +11,7 @@ export const useRatesData = () => {
         const getData = async () => {
             try {
                 const response = await axios.get("https://api.exchangerate.host/latest?base=PLN");
-                const date = response.data.date;
-                const rates = response.data.rates;
+                const { date, rates } = response.data;
                 setRatesData({
                     state: "succes",
                     date,
@@ -22,7 +21,6 @@ export const useRatesData = () => {
                 setRatesData({
                     state: "error",
                 });
-                console.error("Something went wrong!", error);
             }
         };
 

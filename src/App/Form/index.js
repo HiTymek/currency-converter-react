@@ -30,73 +30,68 @@ const Form = ({ legend }) => {
     };
 
     return (
-        <>
-            {ratesData.state === "pending" ?
-                <StyledForm>
+        ratesData.state === "pending" ?
+            <StyledForm>
+                <Fieldset>
+                    <Clock />
+                    <InformationWindow
+                        header={"Przelicznik Walut"}
+                        content={"Sekundka... Właśnie przebiega pobieranie aktualnych kursów walut z Europejskiego Banku Centralnego 🔨"}
+                    />
+                </Fieldset>
+            </StyledForm>
+            :
+            ratesData.state === "succes" ?
+                <StyledForm onSubmit={onFormSubmit}>
+                    <Fieldset>
+                        <Legend>{legend}</Legend>
+
+                        <Clock />
+
+                        <InputContainer label="WYBIERZ WALUTE">
+                            <CurrencySelect
+                                ratesData={ratesData}
+                                currency={currency}
+                                setCurrency={setCurrency}
+                            />
+                        </InputContainer>
+
+                        <InputContainer label="KWOTA W PLN">
+                            <Input
+                                type="number"
+                                min="1"
+                                step="0.01"
+                                placeholder="Kwotę podaj w PLN"
+                                value={amount}
+                                onChange={({ target }) => setAmount(target.value)}
+                            />
+                        </InputContainer>
+
+                        <InputContainer label="WYNIK">
+                            <strong>
+                                {result && `${result.amount} PLN = ${result.finalResult} ${result.currency}`}
+                            </strong>
+                        </InputContainer>
+
+                        <InputContainer label="PRZELICZ ILE DOSTANIESZ">
+                            <Button>PRZELICZ</Button>
+                        </InputContainer>
+
+                        <Info updateDate={ratesData.date}></Info>
+
+                    </Fieldset>
+
+                </StyledForm>
+                :
+                <StyledForm error>
                     <Fieldset>
                         <Clock />
                         <InformationWindow
                             header={"Przelicznik Walut"}
-                            content={"Sekundka... Właśnie przebiega pobieranie aktualnych kursów walut z Europejskiego Banku Centralnego 🔨"}
+                            content={"Coś poszło nie tak 🙁. Sprawdź swoje połączenie z internetem. Jeśli nie pomogło, wygląda na to, ze to nasza wina. Prosimy spróbuj poźniej 😃."}
                         />
                     </Fieldset>
                 </StyledForm>
-                :
-                ratesData.state === "succes" ?
-                    <StyledForm
-                        onSubmit={onFormSubmit}
-                    >
-                        <Fieldset>
-                            <Legend>{legend}</Legend>
-
-                            <Clock />
-
-                            <InputContainer label="WYBIERZ WALUTE">
-                                <CurrencySelect
-                                    ratesData={ratesData}
-                                    currency={currency}
-                                    setCurrency={setCurrency}
-                                />
-                            </InputContainer>
-
-                            <InputContainer label="KWOTA W PLN">
-                                <Input
-                                    type="number"
-                                    min="1"
-                                    step="0.01"
-                                    placeholder="Kwotę podaj w PLN"
-                                    value={amount}
-                                    onChange={({ target }) => setAmount(target.value)}
-                                />
-                            </InputContainer>
-
-                            <InputContainer label="WYNIK">
-                                <strong>
-                                    {result && `${result.amount} PLN = ${result.finalResult} ${result.currency}`}
-                                </strong>
-                            </InputContainer>
-
-                            <InputContainer label="PRZELICZ ILE DOSTANIESZ">
-                                <Button>PRZELICZ</Button>
-                            </InputContainer>
-
-                            <Info updateDate={ratesData.date}></Info>
-
-                        </Fieldset>
-
-                    </StyledForm>
-                    :
-                    <StyledForm error>
-                        <Fieldset>
-                            <Clock />
-                            <InformationWindow
-                                header={"Przelicznik Walut"}
-                                content={"Coś poszło nie tak 🙁. Sprawdź swoje połączenie z internetem. Jeśli nie pomogło, wygląda na to, ze to nasza wina. Prosimy spróbuj poźniej 😃."}
-                            />
-                        </Fieldset>
-                    </StyledForm>
-            }
-        </>
     );
 };
 
